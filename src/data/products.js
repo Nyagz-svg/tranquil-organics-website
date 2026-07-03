@@ -2,22 +2,31 @@ export const products = [
   {
     id: "organic-hair-growth-butter",
     name: "Organic Hair Growth Butter",
-    brand: "Tranquil Roots",
+    brand: "Tranquil Roots by Tranquil Organics",
     category: "Hair Butter",
     size: "250ml",
     price: 850,
     stockLabel: "In Stock",
     badge: "Bestseller",
+    badges: ["Bestseller"],
     rating: 4.9,
-    reviewCount: 42,
+    reviewCount: 24,
     image: "/images/organic-hair-growth-butter.png",
-    shortDescription: "Seals in moisture, softens strands, and adds natural-looking shine.",
-    trustNote: "Natural-inspired care for dry hair and protective styles.",
+    shortDescription: "Helps soften strands and seal in moisture.",
+    bestFor: "Dry strands, dullness, moisture sealing, and protective styles.",
+    howToUse:
+      "Apply a small amount to damp or dry hair after moisturising. Focus on the ends and dry areas.",
+    whyItWorks:
+      "Helps soften strands, seal in moisture, and add natural-looking shine as part of a consistent routine.",
+    textureFeel: "Rich, creamy, and nourishing.",
+    routineStep: "Step 3: Seal and soften.",
+    hairConcern: "Dry hair, dull hair, protective styles.",
+    trustNote: "Made for daily and weekly natural hair routines.",
     benefitStatement:
-      "Plant-powered care that helps reduce dryness, soften strands, and support a consistent haircare routine.",
+      "Best for sealing moisture, softening strands, and supporting dry hair routines.",
     description:
       "A rich hair butter made for moisture sealing, softer-feeling strands, protective styles, and natural-looking shine.",
-    concerns: ["Dry Hair", "Breakage Support", "Protective Styles", "Dull Hair"],
+    concerns: ["Dry Hair", "Protective Styles", "Dull Hair", "Breakage Support"],
     whoItIsFor:
       "Suitable for natural hair routines, dry hair, dull hair, and protective styles that need moisture sealing.",
     whatItDoes:
@@ -31,28 +40,35 @@ export const products = [
     keyIngredients:
       "Ingredient details to be updated after brand confirmation.",
     ingredients: "Full ingredient list to be updated after confirmation from the brand.",
-    howToUse:
-      "Apply a small amount to damp or dry hair to seal in moisture. Use after Ayurvedic Hair Oil or as needed around protective styles.",
   },
   {
     id: "ayurvedic-hair-oil",
     name: "Ayurvedic Hair Oil",
-    brand: "Tranquil Roots",
+    brand: "Tranquil Roots by Tranquil Organics",
     category: "Hair Oil",
     size: "100ml",
     price: 650,
     stockLabel: "In Stock",
     badge: "Routine Essential",
+    badges: ["Routine Essential"],
     rating: 4.8,
-    reviewCount: 36,
+    reviewCount: 18,
     image: "/images/ayurvedic-hair-oil.png",
-    shortDescription: "Nourishes the scalp and supports a consistent weekly routine.",
-    trustNote: "WhatsApp support available for routine guidance.",
+    shortDescription: "Supports scalp nourishment and weekly massage routines.",
+    bestFor: "Dry scalp, scalp massage, protective styles, and weekly nourishment.",
+    howToUse:
+      "Apply a few drops directly to the scalp and massage gently for 3 to 5 minutes. Use 2 to 3 times per week.",
+    whyItWorks:
+      "Supports scalp nourishment and helps reduce the feeling of dryness as part of a regular routine.",
+    textureFeel: "Lightweight oil feel.",
+    routineStep: "Step 2: Nourish the scalp.",
+    hairConcern: "Dry scalp, scalp care, protective styles.",
+    trustNote: "Designed for simple scalp care and routine consistency.",
     benefitStatement:
-      "Plant-powered scalp care that nourishes the scalp, helps reduce dryness, and adds natural-looking shine.",
+      "Best for scalp nourishment, weekly massage, and scalp comfort.",
     description:
       "A lightweight hair oil designed for scalp nourishment, dryness support, shine, and consistent natural haircare routines.",
-    concerns: ["Scalp Dryness", "Protective Styles", "Dull Hair"],
+    concerns: ["Dry Scalp", "Protective Styles", "Dull Hair"],
     whoItIsFor:
       "Suitable for customers building a scalp-care routine, refreshing protective styles, or managing scalp dryness.",
     whatItDoes:
@@ -66,28 +82,35 @@ export const products = [
     keyIngredients:
       "Ingredient details to be updated after brand confirmation.",
     ingredients: "Full ingredient list to be updated after confirmation from the brand.",
-    howToUse:
-      "Apply directly to the scalp and massage for 3 to 5 minutes. Use 2 to 3 times per week or as part of your regular routine.",
   },
   {
     id: "conditioning-bar",
     name: "Conditioning Bar",
-    brand: "Tranquil Roots",
+    brand: "Tranquil Roots by Tranquil Organics",
     category: "Conditioning Bar",
     size: "",
     price: 500,
     stockLabel: "In Stock",
-    badge: "New Arrival",
+    badge: "Wash Day Softness",
+    badges: ["Wash Day Softness"],
     rating: 4.7,
-    reviewCount: 29,
+    reviewCount: 16,
     image: "/images/conditioning-bar.png",
-    shortDescription: "Softens strands and makes wash day feel easier.",
-    trustNote: "Premium packaging and easy wash-day storage.",
+    shortDescription: "Helps soften hair after washing and make wash day easier.",
+    bestFor: "Wash day softness, easier detangling, and smoother-feeling hair.",
+    howToUse:
+      "After washing, rub the bar between wet hands or directly onto wet hair. Work through the hair, leave briefly, then rinse.",
+    whyItWorks:
+      "Helps soften hair after washing and supports a smoother wash day experience.",
+    textureFeel: "Smooth conditioning bar.",
+    routineStep: "Step 1: Condition and soften.",
+    hairConcern: "Wash day dryness, rough-feeling hair, softness.",
+    trustNote: "A simple conditioning step for regular wash days.",
     benefitStatement:
-      "A conditioning treatment that supports wash day softness, easier detangling, and a smoother-feeling routine.",
+      "Best for softening hair after washing and making wash day easier.",
     description:
       "A conditioning bar made for wash day softness, smoother-feeling strands, and easier natural haircare maintenance.",
-    concerns: ["Dry Hair", "Wash Day Softness", "Dull Hair"],
+    concerns: ["Wash Day Struggle", "Dry Hair", "Dull Hair"],
     whoItIsFor:
       "Suitable for wash day routines, dry hair, dull hair, and customers who want a simple conditioning step.",
     whatItDoes:
@@ -101,22 +124,21 @@ export const products = [
     keyIngredients:
       "Ingredient details to be updated after brand confirmation.",
     ingredients: "Full ingredient list to be updated after confirmation from the brand.",
-    howToUse:
-      "After washing, rub the conditioning bar between wet hands or directly onto wet hair. Leave briefly, then rinse thoroughly.",
   },
   {
     id: "complete-haircare-routine-pack",
     name: "Complete Haircare Routine Pack",
-    brand: "Tranquil Roots",
+    brand: "Tranquil Roots by Tranquil Organics",
     category: "Routine Pack",
     size: "3-piece set",
     originalPrice: 2000,
     price: 1850,
     stockLabel: "In Stock",
-    badge: "Customer Favourite",
-    bundleLabel: "Save when you buy as a set",
+    badge: "Best Value",
+    badges: ["Best Value", "Complete Routine", "Best for Beginners"],
+    bundleLabel: "Save vs buying separately",
     rating: 4.9,
-    reviewCount: 31,
+    reviewCount: 22,
     image: "/images/organic-hair-growth-butter.png",
     bundleImages: [
       "/images/conditioning-bar.png",
@@ -124,12 +146,22 @@ export const products = [
       "/images/organic-hair-growth-butter.png",
     ],
     shortDescription:
-      "A full routine for scalp nourishment, wash day softness, and moisture sealing.",
-    trustNote: "Save when buying the routine as a complete set.",
+      "A full routine for wash day softness, scalp nourishment, and moisture sealing.",
+    bestFor:
+      "Beginners, full routine care, dry hair, scalp nourishment, and protective styles.",
+    howToUse:
+      "Use the Conditioning Bar on wash day, massage Ayurvedic Hair Oil into the scalp, then seal moisture with Organic Hair Growth Butter.",
+    whyItWorks:
+      "Combines cleansing support, scalp nourishment, and moisture sealing in one complete routine.",
+    textureFeel: "Full routine set.",
+    routineStep: "Complete routine.",
+    hairConcern:
+      "Dry hair, scalp care, dullness, protective styles, routine building.",
+    trustNote: "Best value for customers starting the Tranquil Roots routine.",
     benefitStatement:
-      "A complete routine pack for cleansing, nourishing, moisturising, and maintaining healthier-looking hair.",
+      "Best for customers who want the full Tranquil Roots routine in one set.",
     description:
-      "A complete routine pack for cleansing, nourishing, moisturising, and maintaining healthier-looking hair.",
+      "A complete routine pack for wash day softness, scalp nourishment, moisture sealing, and easier routine building.",
     includes: [
       "Organic Hair Growth Butter",
       "Ayurvedic Hair Oil",
@@ -137,11 +169,12 @@ export const products = [
     ],
     concerns: [
       "Dry Hair",
-      "Scalp Dryness",
+      "Dry Scalp",
       "Breakage Support",
       "Protective Styles",
       "Dull Hair",
-      "Wash Day Softness",
+      "Wash Day Struggle",
+      "Full Routine",
     ],
     whoItIsFor:
       "Suitable for customers who want all core Tranquil Roots routine steps in one set.",
@@ -149,15 +182,13 @@ export const products = [
       "Combines wash day conditioning, scalp nourishment, and moisture sealing for a complete natural haircare routine.",
     benefits: [
       "Covers a full wash day to styling routine",
-      "Combines cleansing, scalp care, and moisture sealing",
+      "Combines conditioning, scalp care, and moisture sealing",
       "Helps simplify product selection",
       "Better value than buying each step separately",
     ],
     keyIngredients:
       "Ingredient details to be updated after brand confirmation.",
     ingredients: "Full ingredient list to be updated after confirmation from the brand.",
-    howToUse:
-      "Use the Conditioning Bar on wash day, massage Ayurvedic Hair Oil into the scalp, then apply Organic Hair Growth Butter to seal in moisture.",
   },
 ];
 

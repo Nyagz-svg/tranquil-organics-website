@@ -1,28 +1,10 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, CheckCircle, Moon, Repeat, Sun, ThermometerSun } from "lucide-react";
+import MoistureRoutineSection from "../components/MoistureRoutineSection.jsx";
 import PageMeta from "../components/PageMeta.jsx";
 import RoutineBuilder from "../components/RoutineBuilder.jsx";
 import TrustBadges from "../components/TrustBadges.jsx";
 import { absoluteUrl } from "../data/seo.js";
-
-const routineSteps = [
-  {
-    title: "Cleanse and condition",
-    text: "Cleanse and condition using the Conditioning Bar.",
-  },
-  {
-    title: "Nourish the scalp",
-    text: "Apply Ayurvedic Hair Oil directly to the scalp and massage for 3 to 5 minutes.",
-  },
-  {
-    title: "Seal in moisture",
-    text: "Apply Organic Hair Growth Butter to seal in moisture.",
-  },
-  {
-    title: "Stay consistent",
-    text: "Repeat consistently for healthier-looking hair.",
-  },
-];
 
 const tips = [
   { text: "Keep hair moisturised", icon: CheckCircle },
@@ -60,15 +42,7 @@ export default function HaircareRoutine() {
         <RoutineBuilder />
       </section>
 
-      <section className="section-shell section-pad routine-grid">
-        {routineSteps.map((step, index) => (
-          <article className="routine-step" key={step.title}>
-            <span>Step {index + 1}</span>
-            <h2>{step.title}</h2>
-            <p>{step.text}</p>
-          </article>
-        ))}
-      </section>
+      <MoistureRoutineSection />
 
       <section className="tips-band">
         <div className="section-shell section-pad split-section">

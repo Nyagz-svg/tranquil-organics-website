@@ -4,6 +4,7 @@ import { Search } from "lucide-react";
 import PageMeta from "../components/PageMeta.jsx";
 import ProductCard from "../components/ProductCard.jsx";
 import ShopByConcern from "../components/ShopByConcern.jsx";
+import StarterRoutineSection from "../components/StarterRoutineSection.jsx";
 import TrustBadges from "../components/TrustBadges.jsx";
 import { categories, products } from "../data/products.js";
 import { absoluteUrl, productListJsonLd } from "../data/seo.js";
@@ -87,6 +88,8 @@ export default function Shop() {
       <section className="section-shell trust-strip-wrap">
         <TrustBadges />
       </section>
+
+      <StarterRoutineSection />
 
       <section className="section-shell section-pad">
         <div className="section-heading">

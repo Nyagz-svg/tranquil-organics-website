@@ -1,7 +1,9 @@
 export const businessInfo = {
   name: "Tranquil Organics",
   productLine: "Tranquil Roots",
-  tagline: "Natural haircare and skincare products created for growth, glow, and confidence.",
+  collectionLabel: "Tranquil Roots by Tranquil Organics",
+  tagline:
+    "Plant-powered haircare made for dry strands, scalp comfort, protective styles, and easier wash days.",
   siteUrl: "https://tranquil-organics-website-phi.vercel.app",
   whatsappDisplay: "+254 727 347707",
   whatsappNumber: "254727347707",
@@ -59,4 +61,16 @@ export function createWhatsAppLink(message) {
   }
 
   return `${businessInfo.whatsappUrl}?text=${encodeURIComponent(message)}`;
+}
+
+export function createProductWhatsAppLink(productName) {
+  return createWhatsAppLink(
+    `Hello Tranquil Organics, I would like to ask about ${productName}.`,
+  );
+}
+
+export function createRoutineWhatsAppLink(concernName) {
+  return createWhatsAppLink(
+    `Hello Tranquil Organics, I need help choosing a haircare routine. My main concern is ${concernName}.`,
+  );
 }

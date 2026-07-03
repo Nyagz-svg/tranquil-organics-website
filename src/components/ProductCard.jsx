@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ShoppingBag, Star } from "lucide-react";
+import { MessageCircle, ShoppingBag, Star } from "lucide-react";
 import { useCart } from "../context/CartContext.jsx";
+import { createProductWhatsAppLink } from "../data/business.js";
 import { formatPrice } from "../data/products.js";
 
 export function Rating({ value, count }) {
@@ -17,7 +18,7 @@ export function Rating({ value, count }) {
         ))}
       </span>
       <small>
-        {value} {count ? `(${count})` : ""}
+        {value} {count ? `| ${count} reviews` : ""}
       </small>
     </div>
   );
@@ -26,6 +27,7 @@ export function Rating({ value, count }) {
 export default function ProductCard({ product }) {
   const [added, setAdded] = useState(false);
   const { addToCart } = useCart();
+  const badges = product.badges ?? (product.badge ? [product.badge] : []);
 
   function handleAddToCart() {
     addToCart(product.id);
@@ -52,11 +54,23 @@ export default function ProductCard({ product }) {
             <p className="eyebrow">{product.category}</p>
             {product.stockLabel && <span className="stock-label">{product.stockLabel}</span>}
           </div>
-          {product.badge && <span className="product-badge">{product.badge}</span>}
+          {badges.length > 0 && (
+            <div className="product-card-badges">
+              {badges.map((badge) => (
+                <span className="product-badge" key={badge}>{badge}</span>
+              ))}
+            </div>
+          )}
           <h3>
             <Link to={`/product/${product.id}`}>{product.name}</Link>
           </h3>
+          <p className="product-brand-line">{product.brand}</p>
           {product.bundleLabel && <p className="bundle-label">{product.bundleLabel}</p>}
+          {product.bestFor && (
+            <p className="product-best-for">
+              <strong>Best for:</strong> {product.bestFor}
+            </p>
+          )}
           <p>{product.shortDescription}</p>
         </div>
         <Rating value={product.rating} count={product.reviewCount} />
@@ -70,6 +84,15 @@ export default function ProductCard({ product }) {
             <ShoppingBag size={17} />
             {added ? "Added" : "Add to Cart"}
           </button>
+          <a
+            href={createProductWhatsAppLink(product.name)}
+            className="button secondary small"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <MessageCircle size={16} />
+            Ask on WhatsApp
+          </a>
         </div>
       </div>
     </article>

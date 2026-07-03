@@ -1,46 +1,33 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Droplets, Headphones, Leaf, MessageCircle, PackageCheck, ShieldCheck, Sparkles, Truck } from "lucide-react";
+import {
+  ArrowRight,
+  Camera,
+  Droplets,
+  Leaf,
+  MessageCircle,
+  ShieldCheck,
+  Sparkles,
+} from "lucide-react";
 import { DeliveryInfoPanel, PaymentMethodsPanel, ReturnsPolicyPanel } from "../components/InfoPanels.jsx";
+import MoistureRoutineSection from "../components/MoistureRoutineSection.jsx";
 import PageMeta from "../components/PageMeta.jsx";
 import ProductCard from "../components/ProductCard.jsx";
 import ReviewCard from "../components/ReviewCard.jsx";
 import RoutineBuilder from "../components/RoutineBuilder.jsx";
 import ShopByConcern from "../components/ShopByConcern.jsx";
+import StarterRoutineSection from "../components/StarterRoutineSection.jsx";
 import TrustBadges from "../components/TrustBadges.jsx";
-import { businessInfo } from "../data/business.js";
-import { formatPrice, getProductsByIds, products } from "../data/products.js";
+import { businessInfo, createRoutineWhatsAppLink } from "../data/business.js";
+import { getProductsByIds, products } from "../data/products.js";
 import { absoluteUrl, organizationJsonLd, productJsonLd, productListJsonLd, websiteJsonLd } from "../data/seo.js";
-import { customerReviews, faqItems } from "../data/siteContent.js";
+import { customerReviews, faqItems, heroTrustStripItems, visualStoryCards } from "../data/siteContent.js";
 
 const bestSellers = getProductsByIds([
   "organic-hair-growth-butter",
+  "complete-haircare-routine-pack",
   "ayurvedic-hair-oil",
   "conditioning-bar",
-  "complete-haircare-routine-pack",
 ]);
-
-const reasons = [
-  {
-    title: "Natural-inspired care",
-    text: "Plant-powered haircare language with ingredient transparency while final lists are confirmed.",
-    icon: Leaf,
-  },
-  {
-    title: "Real product photography",
-    text: "Product images are shown clearly so customers can inspect the butter, oil, bar, and full routine pack.",
-    icon: PackageCheck,
-  },
-  {
-    title: "Kenya delivery",
-    text: "Delivery is confirmed before dispatch, with same-day or next-day options depending on location.",
-    icon: Truck,
-  },
-  {
-    title: "Support when you need it",
-    text: "Customers can ask routine, delivery, bulk order, and checkout questions through WhatsApp.",
-    icon: Headphones,
-  },
-];
 
 const ingredientCards = [
   {
@@ -50,12 +37,12 @@ const ingredientCards = [
   },
   {
     title: "Scalp nourishment",
-    text: "Ingredient details to be updated after brand confirmation.",
+    text: "Build a calm weekly massage routine with clear usage guidance.",
     icon: Droplets,
   },
   {
     title: "Softness and shine",
-    text: "Ingredient details to be updated after brand confirmation.",
+    text: "Choose products that support softer strands and natural-looking shine.",
     icon: Sparkles,
   },
 ];
@@ -64,8 +51,8 @@ export default function Home() {
   return (
     <>
       <PageMeta
-        title="Tranquil Organics | Natural Haircare for Stronger, Healthier, Glowing Hair"
-        description="Shop Tranquil Roots plant-powered hair oils, butters, and conditioning treatments for scalp nourishment, dryness support, softer strands, and natural haircare routines."
+        title="Tranquil Organics | Premium Natural Haircare Routine"
+        description="Shop Tranquil Roots by Tranquil Organics for plant-powered haircare made for dry strands, scalp comfort, protective styles, and easier wash days."
         canonical={absoluteUrl("/")}
         jsonLd={[
           organizationJsonLd(),
@@ -78,31 +65,28 @@ export default function Home() {
       <section className="hero-section">
         <div className="section-shell hero-grid">
           <div className="hero-copy">
-            <p className="eyebrow">Tranquil Roots by Tranquil Organics</p>
-            <h1>Natural Haircare for Stronger, Healthier, Glowing Hair</h1>
+            <p className="eyebrow">TRANQUIL ROOTS BY TRANQUIL ORGANICS</p>
+            <h1>Soft, nourished natural hair starts with a simple routine.</h1>
             <p>
-              Plant-powered hair oils, butters, and conditioning treatments designed
-              to nourish your scalp, reduce dryness, soften strands, and support your
-              natural haircare routine.
+              Plant-powered haircare made for dry strands, scalp comfort,
+              protective styles, and easier wash days.
             </p>
             <div className="hero-actions">
               <Link to="/#best-sellers" className="button primary">
                 Shop Best Sellers <ArrowRight size={18} />
               </Link>
-              <Link to="/routine" className="button ghost">
-                Build Your Hair Routine
+              <Link to="/routine" className="button secondary">
+                Build Your Routine
               </Link>
-            </div>
-            <div className="hero-proof">
-              <span>
-                <Leaf size={18} /> Natural-inspired care
-              </span>
-              <span>
-                <ShieldCheck size={18} /> In Stock products
-              </span>
-              <span>
-                <Sparkles size={18} /> WhatsApp support
-              </span>
+              <a
+                href={businessInfo.whatsappUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="hero-whatsapp-link"
+              >
+                <MessageCircle size={17} />
+                Ask for a Routine Recommendation on WhatsApp
+              </a>
             </div>
           </div>
 
@@ -114,11 +98,22 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="hero-trust-strip" aria-label="Why customers order Tranquil Roots">
+        <div className="section-shell hero-trust-grid">
+          {heroTrustStripItems.map((item) => (
+            <span key={item}>
+              <Leaf size={17} />
+              {item}
+            </span>
+          ))}
+        </div>
+      </section>
+
       <section id="best-sellers" className="section-shell section-pad product-first-section">
         <div className="section-heading">
           <div>
             <p className="eyebrow">Best-Selling Products</p>
-            <h2>Shop the core Tranquil Roots routine.</h2>
+            <h2>Shop the core Tranquil Roots collection.</h2>
           </div>
           <Link to="/shop" className="text-link">
             Shop all products <ArrowRight size={16} />
@@ -131,7 +126,15 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="benefits-band">
+      <StarterRoutineSection />
+
+      <section className="routine-builder-band">
+        <div className="section-shell section-pad">
+          <RoutineBuilder />
+        </div>
+      </section>
+
+      <section className="concern-section">
         <div className="section-shell section-pad">
           <div className="section-heading centered">
             <p className="eyebrow">Shop by Hair Concern</p>
@@ -141,33 +144,16 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section-shell section-pad">
-        <div className="section-heading centered">
-          <p className="eyebrow">Why Tranquil Organics</p>
-          <h2>Designed to help customers buy with more confidence.</h2>
-        </div>
-        <div className="benefit-grid">
-          {reasons.map((reason) => {
-            const Icon = reason.icon;
-            return (
-              <article className="benefit-card" key={reason.title}>
-                <Icon size={24} />
-                <h3>{reason.title}</h3>
-                <p>{reason.text}</p>
-              </article>
-            );
-          })}
-        </div>
-      </section>
+      <MoistureRoutineSection />
 
       <section className="ingredient-band">
         <div className="section-shell section-pad">
           <div className="section-heading">
             <div>
-              <p className="eyebrow">Key Ingredient Benefits</p>
-              <h2>Clear ingredient guidance without unsupported claims.</h2>
+              <p className="eyebrow">Ingredient Benefits</p>
+              <h2>Plant-powered care with clear, careful product guidance.</h2>
             </div>
-            <Link to="/ingredients" className="text-link light">
+            <Link to="/ingredients" className="text-link">
               View glossary <ArrowRight size={16} />
             </Link>
           </div>
@@ -186,24 +172,38 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section-shell section-pad">
-        <RoutineBuilder />
-      </section>
-
       <section className="reviews-band">
         <div className="section-shell section-pad">
           <div className="section-heading">
             <div>
-              <p className="eyebrow">Customer Reviews</p>
-              <h2>Verified customer-style feedback for Tranquil Roots products.</h2>
+              <p className="eyebrow">Customer Proof</p>
+              <h2>Realistic review placeholders for Tranquil Roots routines.</h2>
             </div>
-            <Link to="/reviews" className="text-link light">
-              Read reviews <ArrowRight size={16} />
+            <Link to="/reviews" className="button secondary">
+              Read More Reviews <ArrowRight size={16} />
             </Link>
           </div>
           <div className="review-grid">
-            {customerReviews.map((review) => (
+            {customerReviews.slice(0, 3).map((review) => (
               <ReviewCard key={review.name} {...review} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="visual-story-section">
+        <div className="section-shell section-pad">
+          <div className="section-heading centered">
+            <p className="eyebrow">A Routine You Can See and Feel</p>
+            <h2>Premium visuals to add as the brand photography grows.</h2>
+          </div>
+          <div className="visual-story-grid">
+            {visualStoryCards.map((card) => (
+              <article key={card.title}>
+                <Camera size={22} />
+                <h3>{card.title}</h3>
+                <p>{card.text}</p>
+              </article>
             ))}
           </div>
         </div>
@@ -222,7 +222,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="benefits-band">
+      <section className="faq-preview-band">
         <div className="section-shell section-pad">
           <div className="section-heading">
             <div>
@@ -246,25 +246,25 @@ export default function Home() {
 
       <section className="final-cta section-shell">
         <div>
-          <p className="eyebrow">Ready to order?</p>
-          <h2>Start with best sellers or send your order through WhatsApp.</h2>
+          <p className="eyebrow">Ready to build your routine?</p>
+          <h2>Ready to build your natural haircare routine?</h2>
           <p>
-            Prices start at {formatPrice(500)}. Delivery is available within Kenya,
-            and details are confirmed before dispatch.
+            Start with the Tranquil Roots collection and choose the products that
+            match your hair needs.
           </p>
         </div>
         <div className="final-cta-actions">
-          <Link to="/shop" className="button primary">
+          <Link to="/#best-sellers" className="button primary">
             Shop Best Sellers <ArrowRight size={18} />
           </Link>
           <a
-            href={businessInfo.whatsappUrl}
+            href={createRoutineWhatsAppLink("I need help choosing")}
             target="_blank"
             rel="noreferrer"
             className="button whatsapp"
           >
             <MessageCircle size={18} />
-            Order on WhatsApp
+            Ask for Help on WhatsApp
           </a>
         </div>
       </section>

@@ -74,6 +74,22 @@ Update each product image path in `src/data/products.js`:
 
 The Complete Haircare Routine Pack uses the existing product images as a bundle set through `bundleImages`.
 
+## Photography Guide
+
+Recommended photos to add:
+
+- Product texture close-ups
+- Application on natural hair
+- Ingredients such as oils, herbs, butters, or botanicals
+- Packaging in natural light
+- Wash day routine shots
+- Protective style routine shots
+- Customer photos only with permission
+
+Replace image files inside `public/images`, then confirm the matching paths in `src/data/products.js`.
+
+The visual storytelling placeholders on the homepage can be replaced with real product and routine photography once approved brand photos are available. Do not use fake before-and-after images or imply guaranteed results.
+
 ## Update Product Prices
 
 Edit prices in `src/data/products.js`.

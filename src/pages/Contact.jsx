@@ -8,7 +8,7 @@ import {
   ReturnsPolicyPanel,
 } from "../components/InfoPanels.jsx";
 import PageMeta from "../components/PageMeta.jsx";
-import { businessInfo, createWhatsAppLink } from "../data/business.js";
+import { businessInfo, createRoutineWhatsAppLink, createWhatsAppLink } from "../data/business.js";
 import { absoluteUrl, organizationJsonLd } from "../data/seo.js";
 import { faqItems } from "../data/siteContent.js";
 
@@ -72,7 +72,16 @@ export default function Contact() {
             rel="noreferrer"
           >
             <MessageCircle size={18} />
-            WhatsApp Order
+            Order on WhatsApp
+          </a>
+          <a
+            className="button secondary"
+            href={createRoutineWhatsAppLink("I need help choosing")}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <MessageCircle size={18} />
+            Need help choosing? Chat with us
           </a>
           <div className="contact-list">
             <p>

@@ -6,7 +6,7 @@ import ProductCard, { Rating } from "../components/ProductCard.jsx";
 import ReviewCard from "../components/ReviewCard.jsx";
 import TrustBadges from "../components/TrustBadges.jsx";
 import { MAX_PRODUCT_QUANTITY, useCart } from "../context/CartContext.jsx";
-import { businessInfo, createWhatsAppLink } from "../data/business.js";
+import { businessInfo, createProductWhatsAppLink, createWhatsAppLink } from "../data/business.js";
 import { absoluteUrl, productJsonLd } from "../data/seo.js";
 import { customerReviews } from "../data/siteContent.js";
 import { formatPrice, products } from "../data/products.js";
@@ -33,13 +33,33 @@ function ProductDetailsContent({ product }) {
 
   return [
     {
+      title: "Best for",
+      content: product.bestFor,
+    },
+    {
       title: "What it does",
       content: product.whatItDoes,
       open: true,
     },
     {
+      title: "Why it works",
+      content: product.whyItWorks,
+    },
+    {
       title: "Who it is for",
       content: product.whoItIsFor,
+    },
+    {
+      title: "Texture or feel",
+      content: product.textureFeel,
+    },
+    {
+      title: "Routine step",
+      content: product.routineStep,
+    },
+    {
+      title: "Hair concern",
+      content: product.hairConcern,
     },
     {
       title: "Key ingredients",
@@ -112,6 +132,7 @@ export default function ProductDetails() {
   const galleryImages = product.bundleImages ?? [product.image];
   const relatedProducts = products.filter((item) => item.id !== product.id).slice(0, 3);
   const detailSections = ProductDetailsContent({ product });
+  const badges = product.badges ?? (product.badge ? [product.badge] : []);
 
   function increaseQuantity() {
     setQuantity((current) => Math.min(MAX_PRODUCT_QUANTITY, current + 1));
@@ -159,7 +180,9 @@ export default function ProductDetails() {
           <h1>{product.name}</h1>
           <div className="detail-label-row">
             <span className="stock-label">{product.stockLabel}</span>
-            {product.badge && <span className="product-badge">{product.badge}</span>}
+            {badges.map((badge) => (
+              <span className="product-badge" key={badge}>{badge}</span>
+            ))}
             {product.bundleLabel && <span className="save-label">{product.bundleLabel}</span>}
           </div>
           <Rating value={product.rating} count={product.reviewCount} />
@@ -169,6 +192,21 @@ export default function ProductDetails() {
           </div>
           {product.size && <p className="product-size">Size: {product.size}</p>}
           <p className="product-benefit-statement">{product.benefitStatement}</p>
+
+          <div className="product-story-grid">
+            <article>
+              <span>Best for</span>
+              <p>{product.bestFor}</p>
+            </article>
+            <article>
+              <span>Texture</span>
+              <p>{product.textureFeel}</p>
+            </article>
+            <article>
+              <span>Routine step</span>
+              <p>{product.routineStep}</p>
+            </article>
+          </div>
 
           <div className="quantity-purchase-row">
             <div>
@@ -211,6 +249,15 @@ export default function ProductDetails() {
             >
               <MessageCircle size={18} />
               Order on WhatsApp
+            </a>
+            <a
+              className="button secondary wide"
+              href={createProductWhatsAppLink(product.name)}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <MessageCircle size={18} />
+              Ask about this product
             </a>
           </div>
 

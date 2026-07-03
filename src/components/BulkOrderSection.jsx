@@ -1,5 +1,5 @@
 import { MessageCircle } from "lucide-react";
-import { businessInfo } from "../data/business.js";
+import { createWhatsAppLink } from "../data/business.js";
 
 export default function BulkOrderSection() {
   return (
@@ -14,7 +14,7 @@ export default function BulkOrderSection() {
       </div>
       <a
         className="button whatsapp"
-        href={businessInfo.whatsappUrl}
+        href={createWhatsAppLink("Hello Tranquil Organics, I would like to request bulk pricing on WhatsApp.")}
         target="_blank"
         rel="noreferrer"
       >

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { Menu, ShoppingBag, X } from "lucide-react";
 import { useCart } from "../context/CartContext.jsx";
+import { businessInfo } from "../data/business.js";
 import { announcementMessages } from "../data/siteContent.js";
 
 const navLinks = [
@@ -45,7 +46,7 @@ export default function Navbar() {
           <span className="brand-mark">TO</span>
           <span>
             <strong>Tranquil Organics</strong>
-            <small>Tranquil Roots</small>
+            <small>{businessInfo.collectionLabel}</small>
           </span>
         </Link>
 

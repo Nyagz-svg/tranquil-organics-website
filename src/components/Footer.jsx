@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { AtSign, Mail, MessageCircle } from "lucide-react";
-import { businessInfo } from "../data/business.js";
+import { businessInfo, createRoutineWhatsAppLink } from "../data/business.js";
 import LoyaltySignup from "./LoyaltySignup.jsx";
 
 const shopLinks = [
@@ -23,11 +23,12 @@ const learnLinks = [
 const careLinks = [
   { label: "Contact", to: "/contact" },
   { label: "FAQ", to: "/contact#faq" },
+  { label: "Ask for a routine recommendation", to: createRoutineWhatsAppLink("I need help choosing"), external: true },
   { label: "Shipping Policy", to: "/shipping" },
   { label: "Returns Policy", to: "/returns" },
   { label: "Privacy Policy", to: "/privacy" },
   { label: "Terms of Service", to: "/terms" },
-  { label: "WhatsApp Support", to: businessInfo.whatsappUrl, external: true },
+  { label: "Need help choosing? Chat with us", to: createRoutineWhatsAppLink("I need help choosing"), external: true },
 ];
 
 function FooterLinks({ links }) {
@@ -57,7 +58,7 @@ export default function Footer() {
             <span className="brand-mark">TO</span>
             <span>
               <strong>{businessInfo.name}</strong>
-              <small>{businessInfo.productLine}</small>
+              <small>{businessInfo.collectionLabel}</small>
             </span>
           </Link>
           <p>{businessInfo.tagline}</p>

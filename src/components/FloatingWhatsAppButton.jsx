@@ -1,17 +1,17 @@
 import { MessageCircle } from "lucide-react";
-import { businessInfo } from "../data/business.js";
+import { createRoutineWhatsAppLink } from "../data/business.js";
 
 export default function FloatingWhatsAppButton() {
   return (
     <a
       className="floating-whatsapp"
-      href={businessInfo.whatsappUrl}
+      href={createRoutineWhatsAppLink("I need help choosing")}
       target="_blank"
       rel="noreferrer"
-      aria-label="Order on WhatsApp"
+      aria-label="Need help choosing? Chat with us on WhatsApp"
     >
       <MessageCircle size={19} />
-      <span>Order on WhatsApp</span>
+      <span>Chat with us</span>
     </a>
   );
 }

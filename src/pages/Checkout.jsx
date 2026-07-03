@@ -5,7 +5,7 @@ import { DeliveryInfoPanel, PaymentMethodsPanel } from "../components/InfoPanels
 import PageMeta from "../components/PageMeta.jsx";
 import TrustBadges from "../components/TrustBadges.jsx";
 import { useCart } from "../context/CartContext.jsx";
-import { businessInfo, createWhatsAppLink } from "../data/business.js";
+import { businessInfo, createRoutineWhatsAppLink, createWhatsAppLink } from "../data/business.js";
 import { absoluteUrl } from "../data/seo.js";
 import { formatPrice } from "../data/products.js";
 
@@ -151,7 +151,16 @@ export default function Checkout() {
                 rel="noreferrer"
               >
                 <MessageCircle size={18} />
-                WhatsApp Order
+                Order on WhatsApp
+              </a>
+              <a
+                href={createRoutineWhatsAppLink("I need help choosing")}
+                className="button secondary wide"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <MessageCircle size={18} />
+                Need help choosing? Chat with us
               </a>
               <p className="summary-note">WhatsApp: {businessInfo.whatsappDisplay}</p>
             </aside>
