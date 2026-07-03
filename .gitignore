@@ -3,3 +3,8 @@ dist
 .env
 .env.local
 .DS_Store
+.npm-cache
+tmp
+*.log
+dev-server.err
+dev-server.log
