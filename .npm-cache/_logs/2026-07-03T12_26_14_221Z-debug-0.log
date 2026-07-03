@@ -1,0 +1,120 @@
+0 verbose cli C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\npm\bin\npm-cli.js
+1 info using npm@11.13.0
+2 info using node@v24.16.0
+3 silly config load:file:C:\Program Files\nodejs\node_modules\npm\npmrc
+4 silly config load:file:C:\Users\dell\OneDrive\Documents\EUGOS WEB\.npmrc
+5 silly config load:file:C:\Users\dell\.npmrc
+6 silly config load:file:C:\Users\dell\AppData\Roaming\npm\etc\npmrc
+7 verbose title npm install react react-dom react-router-dom lucide-react
+8 verbose argv "install" "react" "react-dom" "react-router-dom" "lucide-react" "--cache" ".\\.npm-cache"
+9 verbose logfile logs-max:10 dir:C:\Users\dell\OneDrive\Documents\EUGOS WEB\.npm-cache\_logs\2026-07-03T12_26_14_221Z-
+10 verbose logfile C:\Users\dell\OneDrive\Documents\EUGOS WEB\.npm-cache\_logs\2026-07-03T12_26_14_221Z-debug-0.log
+11 silly logfile done cleaning log files
+12 silly packumentCache heap:4496293888 maxSize:1124073472 maxEntrySize:562036736
+13 silly idealTree buildDeps
+14 silly fetch manifest react@*
+15 silly packumentCache full:https://registry.npmjs.org/react cache-miss
+16 http fetch GET 200 https://registry.npmjs.org/npm 713ms
+17 http fetch GET 200 https://registry.npmjs.org/react 1267ms (cache miss)
+18 silly packumentCache full:https://registry.npmjs.org/react set size:undefined disposed:false
+19 silly fetch manifest react-dom@*
+20 silly packumentCache full:https://registry.npmjs.org/react-dom cache-miss
+21 http fetch GET 200 https://registry.npmjs.org/react-dom 872ms (cache miss)
+22 silly packumentCache full:https://registry.npmjs.org/react-dom set size:undefined disposed:false
+23 silly fetch manifest react-router-dom@*
+24 silly packumentCache full:https://registry.npmjs.org/react-router-dom cache-miss
+25 http fetch GET 200 https://registry.npmjs.org/react-router-dom 448ms (cache miss)
+26 silly packumentCache full:https://registry.npmjs.org/react-router-dom set size:undefined disposed:false
+27 silly fetch manifest lucide-react@*
+28 silly packumentCache full:https://registry.npmjs.org/lucide-react cache-miss
+29 http fetch GET 200 https://registry.npmjs.org/lucide-react 255ms (cache miss)
+30 silly packumentCache full:https://registry.npmjs.org/lucide-react set size:undefined disposed:false
+31 silly placeDep ROOT lucide-react@1.23.0 OK for: tranquil-organics-ecommerce@1.0.0 want: *
+32 silly placeDep ROOT react@19.2.7 OK for: lucide-react@1.23.0 want: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
+33 silly placeDep ROOT react@19.2.7 REPLACE for: tranquil-organics-ecommerce@1.0.0 want: *
+34 silly placeDep ROOT react-dom@19.2.7 OK for: tranquil-organics-ecommerce@1.0.0 want: *
+35 silly placeDep ROOT react-router-dom@7.18.1 OK for: tranquil-organics-ecommerce@1.0.0 want: *
+36 silly fetch manifest scheduler@^0.27.0
+37 silly packumentCache full:https://registry.npmjs.org/scheduler cache-miss
+38 silly fetch manifest react-router@7.18.1
+39 silly packumentCache full:https://registry.npmjs.org/react-router cache-miss
+40 http fetch GET 200 https://registry.npmjs.org/scheduler 1075ms (cache miss)
+41 silly packumentCache full:https://registry.npmjs.org/scheduler set size:undefined disposed:false
+42 http fetch GET 200 https://registry.npmjs.org/react-router 1234ms (cache miss)
+43 silly packumentCache full:https://registry.npmjs.org/react-router set size:undefined disposed:false
+44 silly placeDep ROOT scheduler@0.27.0 OK for: react-dom@19.2.7 want: ^0.27.0
+45 silly fetch manifest react@>=18
+46 silly packumentCache full:https://registry.npmjs.org/react cache-miss
+47 http cache https://registry.npmjs.org/react 118ms (cache hit)
+48 silly packumentCache full:https://registry.npmjs.org/react set size:6760698 disposed:false
+49 silly fetch manifest react-dom@>=18
+50 silly packumentCache full:https://registry.npmjs.org/react-dom cache-miss
+51 http cache https://registry.npmjs.org/react-dom 70ms (cache hit)
+52 silly packumentCache full:https://registry.npmjs.org/react-dom set size:9047674 disposed:false
+53 silly placeDep ROOT react-router@7.18.1 OK for: react-router-dom@7.18.1 want: 7.18.1
+54 silly fetch manifest cookie@^1.0.1
+55 silly packumentCache full:https://registry.npmjs.org/cookie cache-miss
+56 silly fetch manifest set-cookie-parser@^2.6.0
+57 silly packumentCache full:https://registry.npmjs.org/set-cookie-parser cache-miss
+58 http fetch GET 200 https://registry.npmjs.org/cookie 167ms (cache miss)
+59 silly packumentCache full:https://registry.npmjs.org/cookie set size:undefined disposed:false
+60 http fetch GET 200 https://registry.npmjs.org/set-cookie-parser 196ms (cache miss)
+61 silly packumentCache full:https://registry.npmjs.org/set-cookie-parser set size:undefined disposed:false
+62 silly placeDep ROOT cookie@1.1.1 OK for: react-router@7.18.1 want: ^1.0.1
+63 silly placeDep ROOT set-cookie-parser@2.7.2 OK for: react-router@7.18.1 want: ^2.6.0
+64 silly reify moves {}
+65 silly audit bulk request {
+65 silly audit   'lucide-react': [ '1.23.0' ],
+65 silly audit   react: [ '19.2.7' ],
+65 silly audit   'react-dom': [ '19.2.7' ],
+65 silly audit   'react-router-dom': [ '7.18.1' ],
+65 silly audit   scheduler: [ '0.27.0' ],
+65 silly audit   'react-router': [ '7.18.1' ],
+65 silly audit   cookie: [ '1.1.1' ],
+65 silly audit   'set-cookie-parser': [ '2.7.2' ]
+65 silly audit }
+66 http cache set-cookie-parser@https://registry.npmjs.org/set-cookie-parser/-/set-cookie-parser-2.7.2.tgz 0ms (cache hit)
+67 http cache cookie@https://registry.npmjs.org/cookie/-/cookie-1.1.1.tgz 0ms (cache hit)
+68 http cache react-router@https://registry.npmjs.org/react-router/-/react-router-7.18.1.tgz 1ms (cache hit)
+69 http cache react-router-dom@https://registry.npmjs.org/react-router-dom/-/react-router-dom-7.18.1.tgz 0ms (cache hit)
+70 http cache react-dom@https://registry.npmjs.org/react-dom/-/react-dom-19.2.7.tgz 0ms (cache hit)
+71 http cache react@https://registry.npmjs.org/react/-/react-19.2.7.tgz 0ms (cache hit)
+72 http cache lucide-react@https://registry.npmjs.org/lucide-react/-/lucide-react-1.23.0.tgz 0ms (cache hit)
+73 http cache scheduler@https://registry.npmjs.org/scheduler/-/scheduler-0.27.0.tgz 0ms (cache hit)
+74 silly tarball no local data for set-cookie-parser@https://registry.npmjs.org/set-cookie-parser/-/set-cookie-parser-2.7.2.tgz. Extracting by manifest.
+75 silly tarball no local data for cookie@https://registry.npmjs.org/cookie/-/cookie-1.1.1.tgz. Extracting by manifest.
+76 silly tarball no local data for react-router@https://registry.npmjs.org/react-router/-/react-router-7.18.1.tgz. Extracting by manifest.
+77 silly tarball no local data for react-router-dom@https://registry.npmjs.org/react-router-dom/-/react-router-dom-7.18.1.tgz. Extracting by manifest.
+78 silly tarball no local data for react-dom@https://registry.npmjs.org/react-dom/-/react-dom-19.2.7.tgz. Extracting by manifest.
+79 silly tarball no local data for react@https://registry.npmjs.org/react/-/react-19.2.7.tgz. Extracting by manifest.
+80 silly tarball no local data for lucide-react@https://registry.npmjs.org/lucide-react/-/lucide-react-1.23.0.tgz. Extracting by manifest.
+81 silly tarball no local data for scheduler@https://registry.npmjs.org/scheduler/-/scheduler-0.27.0.tgz. Extracting by manifest.
+82 http fetch GET 200 https://registry.npmjs.org/set-cookie-parser/-/set-cookie-parser-2.7.2.tgz 183ms (cache miss)
+83 http fetch POST 200 https://registry.npmjs.org/-/npm/v1/security/advisories/bulk 418ms
+84 silly audit report {}
+85 http fetch GET 200 https://registry.npmjs.org/react-router-dom/-/react-router-dom-7.18.1.tgz 498ms (cache miss)
+86 http fetch GET 200 https://registry.npmjs.org/cookie/-/cookie-1.1.1.tgz 504ms (cache miss)
+87 http fetch GET 200 https://registry.npmjs.org/scheduler/-/scheduler-0.27.0.tgz 637ms (cache miss)
+88 http fetch GET 200 https://registry.npmjs.org/react/-/react-19.2.7.tgz 775ms (cache miss)
+89 http fetch GET 200 https://registry.npmjs.org/react-router/-/react-router-7.18.1.tgz 2964ms (cache miss)
+90 http fetch GET 200 https://registry.npmjs.org/react-dom/-/react-dom-19.2.7.tgz 3517ms (cache miss)
+91 http fetch GET 200 https://registry.npmjs.org/lucide-react/-/lucide-react-1.23.0.tgz 36676ms (cache miss)
+92 silly ADD node_modules/set-cookie-parser
+93 silly ADD node_modules/cookie
+94 silly ADD node_modules/react-router
+95 silly ADD node_modules/scheduler
+96 silly ADD node_modules/react-router-dom
+97 silly ADD node_modules/react-dom
+98 silly ADD node_modules/react
+99 silly ADD node_modules/lucide-react
+100 verbose cwd C:\Users\dell\OneDrive\Documents\EUGOS WEB
+101 verbose os Windows_NT 10.0.22621
+102 verbose node v24.16.0
+103 verbose npm  v11.13.0
+104 notice
+104 notice New minor version of npm available! 11.13.0 -> 11.18.0
+104 notice Changelog: https://github.com/npm/cli/releases/tag/v11.18.0
+104 notice To update run: npm install -g npm@11.18.0
+104 notice  { force: true, Symbol(proc-log.meta): true }
+105 verbose exit 0
+106 info ok
