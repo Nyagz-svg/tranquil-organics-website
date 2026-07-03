@@ -37,11 +37,12 @@ export default function RoutineBuilder() {
               <CheckCircle size={18} />
               <span>{item.step}</span>
               <strong>{item.product}</strong>
+              <p>{item.text}</p>
             </article>
           ))}
         </div>
-        <Link to="/shop?concern=Dry%20Hair" className="text-link">
-          Shop routine products <ArrowRight size={16} />
+        <Link to="/product/complete-haircare-routine-pack" className="button primary routine-cta">
+          Shop the Full Routine <ArrowRight size={16} />
         </Link>
       </div>
     </div>

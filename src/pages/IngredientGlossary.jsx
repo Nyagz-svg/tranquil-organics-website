@@ -1,4 +1,5 @@
 import PageMeta from "../components/PageMeta.jsx";
+import { absoluteUrl } from "../data/seo.js";
 
 const glossaryItems = [
   {
@@ -25,6 +26,7 @@ export default function IngredientGlossary() {
       <PageMeta
         title="Ingredient Glossary | Tranquil Organics"
         description="Ingredient glossary placeholders for Tranquil Roots products. Full ingredient lists will be updated after brand confirmation."
+        canonical={absoluteUrl("/ingredients")}
       />
 
       <section className="page-hero compact">

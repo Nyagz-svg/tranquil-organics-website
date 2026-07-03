@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { X } from "lucide-react";
 import PageMeta from "../components/PageMeta.jsx";
+import { absoluteUrl } from "../data/seo.js";
 import { tipArticles } from "../data/siteContent.js";
 
 export default function HaircareTips() {
@@ -11,6 +12,7 @@ export default function HaircareTips() {
       <PageMeta
         title="Haircare Tips | Tranquil Organics"
         description="Read natural haircare tips for moisture, hair oil, wash day, and protective styles from Tranquil Organics."
+        canonical={absoluteUrl("/tips")}
       />
 
       <section className="page-hero compact">

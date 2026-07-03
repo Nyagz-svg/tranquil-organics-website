@@ -6,6 +6,7 @@ import PageMeta from "../components/PageMeta.jsx";
 import TrustBadges from "../components/TrustBadges.jsx";
 import { useCart } from "../context/CartContext.jsx";
 import { businessInfo, createWhatsAppLink } from "../data/business.js";
+import { absoluteUrl } from "../data/seo.js";
 import { formatPrice } from "../data/products.js";
 
 const initialForm = {
@@ -35,9 +36,10 @@ export default function Checkout() {
       "Ordered items:",
       ...orderLines,
       `Total price: ${formatPrice(total)}`,
+      `Payment method: ${form.paymentMethod}`,
       form.notes ? `Order notes: ${form.notes}` : "Order notes: None",
     ].join("\n");
-  }, [cartItems, form.location, form.name, form.notes, form.phone, total]);
+  }, [cartItems, form.location, form.name, form.notes, form.paymentMethod, form.phone, total]);
 
   function updateField(event) {
     const { name, value } = event.target;
@@ -54,6 +56,7 @@ export default function Checkout() {
       <PageMeta
         title="Checkout | Tranquil Organics"
         description="Complete a front-end checkout prototype for Tranquil Organics natural haircare orders with WhatsApp order support."
+        canonical={absoluteUrl("/checkout")}
       />
 
       <section className="page-hero compact">

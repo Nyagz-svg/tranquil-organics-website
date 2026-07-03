@@ -6,6 +6,7 @@ import ProductCard from "../components/ProductCard.jsx";
 import ShopByConcern from "../components/ShopByConcern.jsx";
 import TrustBadges from "../components/TrustBadges.jsx";
 import { categories, products } from "../data/products.js";
+import { absoluteUrl, productListJsonLd } from "../data/seo.js";
 
 export default function Shop() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -72,6 +73,8 @@ export default function Shop() {
       <PageMeta
         title="Shop Natural Haircare | Tranquil Organics"
         description="Browse Tranquil Roots organic hair growth butter, Ayurvedic hair oil, conditioning bar, and routine pack products from Tranquil Organics."
+        canonical={absoluteUrl("/shop")}
+        jsonLd={[productListJsonLd()]}
       />
 
       <section className="page-hero compact">

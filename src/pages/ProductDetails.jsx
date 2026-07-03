@@ -1,15 +1,95 @@
+import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { ArrowRight, Check, MessageCircle, ShoppingBag } from "lucide-react";
+import { ArrowRight, Check, MessageCircle, Minus, Plus, ShoppingBag } from "lucide-react";
 import PageMeta from "../components/PageMeta.jsx";
 import ProductCard, { Rating } from "../components/ProductCard.jsx";
+import ReviewCard from "../components/ReviewCard.jsx";
 import TrustBadges from "../components/TrustBadges.jsx";
-import { useCart } from "../context/CartContext.jsx";
-import { createWhatsAppLink } from "../data/business.js";
+import { MAX_PRODUCT_QUANTITY, useCart } from "../context/CartContext.jsx";
+import { businessInfo, createWhatsAppLink } from "../data/business.js";
+import { absoluteUrl, productJsonLd } from "../data/seo.js";
+import { customerReviews } from "../data/siteContent.js";
 import { formatPrice, products } from "../data/products.js";
+
+function ProductDetailsContent({ product }) {
+  const matchingReviews = customerReviews.filter(
+    (review) => review.productUsed === product.name,
+  );
+
+  const faqs = [
+    {
+      title: `Who is ${product.name} for?`,
+      text: product.whoItIsFor,
+    },
+    {
+      title: "Can I order through WhatsApp?",
+      text: `Yes. Use the WhatsApp button or message ${businessInfo.whatsappDisplay} to confirm your order.`,
+    },
+    {
+      title: "When will full ingredients be available?",
+      text: "Full ingredient list to be updated after confirmation from the brand.",
+    },
+  ];
+
+  return [
+    {
+      title: "What it does",
+      content: product.whatItDoes,
+      open: true,
+    },
+    {
+      title: "Who it is for",
+      content: product.whoItIsFor,
+    },
+    {
+      title: "Key ingredients",
+      content: product.keyIngredients,
+    },
+    {
+      title: "How to use",
+      content: product.howToUse,
+    },
+    {
+      title: "Full ingredients",
+      content: "Full ingredient list to be updated after confirmation from the brand.",
+    },
+    {
+      title: "Shipping and returns",
+      content: `${businessInfo.deliveryInfo} ${businessInfo.returnsPolicy}`,
+    },
+    {
+      title: "FAQs",
+      content: (
+        <div className="detail-mini-list">
+          {faqs.map((faq) => (
+            <article key={faq.title}>
+              <h3>{faq.title}</h3>
+              <p>{faq.text}</p>
+            </article>
+          ))}
+        </div>
+      ),
+    },
+    {
+      title: "Reviews",
+      content:
+        matchingReviews.length > 0 ? (
+          <div className="product-review-grid">
+            {matchingReviews.map((review) => (
+              <ReviewCard key={review.name} {...review} />
+            ))}
+          </div>
+        ) : (
+          "Review placeholders will be updated as customer feedback is confirmed."
+        ),
+    },
+  ];
+}
 
 export default function ProductDetails() {
   const { id } = useParams();
   const { addToCart } = useCart();
+  const [quantity, setQuantity] = useState(1);
   const product = products.find((item) => item.id === id);
 
   if (!product) {
@@ -18,6 +98,7 @@ export default function ProductDetails() {
         <PageMeta
           title="Product Not Found | Tranquil Organics"
           description="The requested Tranquil Organics product could not be found."
+          canonical={absoluteUrl("/shop")}
         />
         <h1>Product not found</h1>
         <p>The product you are looking for is not available.</p>
@@ -28,35 +109,56 @@ export default function ProductDetails() {
     );
   }
 
-  const relatedProducts = products.filter((item) => item.id !== product.id);
+  const galleryImages = product.bundleImages ?? [product.image];
+  const relatedProducts = products.filter((item) => item.id !== product.id).slice(0, 3);
+  const detailSections = ProductDetailsContent({ product });
+
+  function increaseQuantity() {
+    setQuantity((current) => Math.min(MAX_PRODUCT_QUANTITY, current + 1));
+  }
+
+  function decreaseQuantity() {
+    setQuantity((current) => Math.max(1, current - 1));
+  }
+
+  function handleAddToCart() {
+    addToCart(product.id, quantity);
+  }
 
   return (
     <>
       <PageMeta
-        title={`${product.name} | Tranquil Roots`}
-        description={`${product.description} Shop ${product.name} from Tranquil Organics.`}
+        title={`${product.name} | Tranquil Roots Natural Haircare`}
+        description={`${product.benefitStatement} Buy ${product.name} from Tranquil Organics.`}
+        canonical={absoluteUrl(`/product/${product.id}`)}
+        jsonLd={[productJsonLd(product)]}
       />
 
       <section className="section-shell product-detail section-pad page-safe-top">
-        <div className="product-detail-image">
-          {product.bundleImages ? (
-            <div className="bundle-image-stack detail-stack" aria-label={`${product.name} product set`}>
-              {product.bundleImages.map((image) => (
-                <img key={image} src={image} alt="" />
-              ))}
-            </div>
-          ) : (
-            <img src={product.image} alt={`${product.name} product`} />
-          )}
+        <div className="product-gallery" aria-label={`${product.name} image gallery`}>
+          <div className="product-gallery-main">
+            {product.bundleImages ? (
+              <div className="bundle-image-stack detail-stack" aria-label={`${product.name} product set`}>
+                {galleryImages.map((image) => (
+                  <img key={image} src={image} alt="" />
+                ))}
+              </div>
+            ) : (
+              <img src={product.image} alt={`${product.name} product`} />
+            )}
+          </div>
+          <div className="product-gallery-thumbs">
+            {galleryImages.map((image) => (
+              <img key={image} src={image} alt={`${product.name} thumbnail`} />
+            ))}
+          </div>
         </div>
 
         <div className="product-detail-copy">
-          <p className="eyebrow">
-            {product.brand} - {product.category}
-          </p>
+          <p className="eyebrow">{product.brand}</p>
           <h1>{product.name}</h1>
           <div className="detail-label-row">
-            {product.stockLabel && <span className="stock-label">{product.stockLabel}</span>}
+            <span className="stock-label">{product.stockLabel}</span>
             {product.badge && <span className="product-badge">{product.badge}</span>}
             {product.bundleLabel && <span className="save-label">{product.bundleLabel}</span>}
           </div>
@@ -66,20 +168,44 @@ export default function ProductDetails() {
             <strong>{formatPrice(product.price)}</strong>
           </div>
           {product.size && <p className="product-size">Size: {product.size}</p>}
-          <p>{product.description}</p>
+          <p className="product-benefit-statement">{product.benefitStatement}</p>
+
+          <div className="quantity-purchase-row">
+            <div>
+              <span className="quantity-label">Quantity</span>
+              <div className="quantity-control detail-quantity" aria-label={`Quantity for ${product.name}`}>
+                <button
+                  type="button"
+                  aria-label={`Decrease ${product.name} quantity`}
+                  onClick={decreaseQuantity}
+                >
+                  <Minus size={16} />
+                </button>
+                <strong>{quantity}</strong>
+                <button
+                  type="button"
+                  aria-label={`Increase ${product.name} quantity`}
+                  onClick={increaseQuantity}
+                >
+                  <Plus size={16} />
+                </button>
+              </div>
+            </div>
+            <p>Maximum quantity: {MAX_PRODUCT_QUANTITY} per product.</p>
+          </div>
 
           <div className="detail-actions">
             <button
               type="button"
               className="button primary wide"
-              onClick={() => addToCart(product.id)}
+              onClick={handleAddToCart}
             >
               <ShoppingBag size={18} />
               Add to Cart
             </button>
             <a
               className="button whatsapp wide"
-              href={createWhatsAppLink(`Hello Tranquil Organics, I would like to order ${product.name}.`)}
+              href={createWhatsAppLink(`Hello Tranquil Organics, I would like to order ${quantity} x ${product.name}.`)}
               target="_blank"
               rel="noreferrer"
             >
@@ -103,29 +229,16 @@ export default function ProductDetails() {
               </ul>
             </div>
           )}
-
-          <div className="detail-panel">
-            <h2>Benefits</h2>
-            <ul className="check-list">
-              {product.benefits.map((benefit) => (
-                <li key={benefit}>
-                  <Check size={17} />
-                  {benefit}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="detail-panel">
-            <h2>Ingredients</h2>
-            <p>{product.ingredients}</p>
-          </div>
-
-          <div className="detail-panel">
-            <h2>How to Use</h2>
-            <p>{product.howToUse}</p>
-          </div>
         </div>
+      </section>
+
+      <section className="section-shell product-detail-sections">
+        {detailSections.map((section) => (
+          <details className="product-accordion" key={section.title} open={section.open}>
+            <summary>{section.title}</summary>
+            {typeof section.content === "string" ? <p>{section.content}</p> : section.content}
+          </details>
+        ))}
       </section>
 
       <section className="section-shell section-pad">

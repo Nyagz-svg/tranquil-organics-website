@@ -3,6 +3,7 @@ import { Minus, Plus, ShoppingBag, Trash2 } from "lucide-react";
 import PageMeta from "../components/PageMeta.jsx";
 import TrustBadges from "../components/TrustBadges.jsx";
 import { MAX_PRODUCT_QUANTITY, useCart } from "../context/CartContext.jsx";
+import { absoluteUrl } from "../data/seo.js";
 import { formatPrice } from "../data/products.js";
 
 export default function Cart() {
@@ -28,6 +29,7 @@ export default function Cart() {
       <PageMeta
         title="Cart | Tranquil Organics"
         description="Review your Tranquil Organics cart, update quantities, remove products, and continue to checkout."
+        canonical={absoluteUrl("/cart")}
       />
 
       <section className="page-hero compact">

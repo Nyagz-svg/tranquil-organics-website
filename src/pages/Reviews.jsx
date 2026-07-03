@@ -1,6 +1,7 @@
 import PageMeta from "../components/PageMeta.jsx";
 import ReviewCard from "../components/ReviewCard.jsx";
 import TrustBadges from "../components/TrustBadges.jsx";
+import { absoluteUrl } from "../data/seo.js";
 import { customerReviews } from "../data/siteContent.js";
 
 export default function Reviews() {
@@ -9,6 +10,7 @@ export default function Reviews() {
       <PageMeta
         title="Reviews and Results | Tranquil Organics"
         description="Read customer reviews and results placeholders for Tranquil Roots natural haircare products from Tranquil Organics."
+        canonical={absoluteUrl("/reviews")}
       />
 
       <section className="page-hero compact">

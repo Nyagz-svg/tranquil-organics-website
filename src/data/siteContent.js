@@ -28,17 +28,17 @@ export const trustBadges = [
 export const concerns = [
   {
     title: "Dry Hair",
-    text: "Moisture sealing and softer-feeling strands.",
-    productIds: ["conditioning-bar", "organic-hair-growth-butter", "complete-haircare-routine-pack"],
+    text: "Organic Hair Growth Butter and the Routine Pack help seal in moisture.",
+    productIds: ["organic-hair-growth-butter", "complete-haircare-routine-pack"],
   },
   {
-    title: "Itchy Scalp",
-    text: "Gentle scalp nourishment for your weekly routine.",
-    productIds: ["ayurvedic-hair-oil", "complete-haircare-routine-pack"],
+    title: "Scalp Dryness",
+    text: "Ayurvedic Hair Oil supports scalp nourishment in a weekly routine.",
+    productIds: ["ayurvedic-hair-oil"],
   },
   {
-    title: "Breakage",
-    text: "Support for consistent care and protective styling.",
+    title: "Breakage Support",
+    text: "The butter and Routine Pack support consistent protective care.",
     productIds: ["organic-hair-growth-butter", "complete-haircare-routine-pack"],
   },
   {
@@ -52,8 +52,8 @@ export const concerns = [
     productIds: ["ayurvedic-hair-oil", "organic-hair-growth-butter", "conditioning-bar"],
   },
   {
-    title: "Wash Day Care",
-    text: "A calmer wash day with conditioning support.",
+    title: "Wash Day Softness",
+    text: "Conditioning Bar helps wash day feel softer and easier.",
     productIds: ["conditioning-bar", "complete-haircare-routine-pack"],
   },
 ];
@@ -68,10 +68,26 @@ export const routineOptions = [
 ];
 
 export const recommendedRoutine = [
-  { step: "Step 1", product: "Conditioning Bar" },
-  { step: "Step 2", product: "Ayurvedic Hair Oil" },
-  { step: "Step 3", product: "Organic Hair Growth Butter" },
-  { step: "Step 4", product: "Complete Haircare Routine Pack" },
+  {
+    step: "Step 1",
+    product: "Conditioning Bar",
+    text: "Cleanse and condition with the Conditioning Bar.",
+  },
+  {
+    step: "Step 2",
+    product: "Ayurvedic Hair Oil",
+    text: "Apply Ayurvedic Hair Oil directly to the scalp and massage for 3 to 5 minutes.",
+  },
+  {
+    step: "Step 3",
+    product: "Organic Hair Growth Butter",
+    text: "Apply Organic Hair Growth Butter to damp or dry hair to seal in moisture.",
+  },
+  {
+    step: "Step 4",
+    product: "Complete Haircare Routine Pack",
+    text: "Use the Complete Haircare Routine Pack for a full routine.",
+  },
 ];
 
 export const loyaltyRewards = [

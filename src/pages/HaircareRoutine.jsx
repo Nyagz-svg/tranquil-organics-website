@@ -3,6 +3,7 @@ import { ArrowRight, CheckCircle, Moon, Repeat, Sun, ThermometerSun } from "luci
 import PageMeta from "../components/PageMeta.jsx";
 import RoutineBuilder from "../components/RoutineBuilder.jsx";
 import TrustBadges from "../components/TrustBadges.jsx";
+import { absoluteUrl } from "../data/seo.js";
 
 const routineSteps = [
   {
@@ -11,7 +12,7 @@ const routineSteps = [
   },
   {
     title: "Nourish the scalp",
-    text: "Apply Ayurvedic Hair Oil to the scalp and massage gently.",
+    text: "Apply Ayurvedic Hair Oil directly to the scalp and massage for 3 to 5 minutes.",
   },
   {
     title: "Seal in moisture",
@@ -37,6 +38,7 @@ export default function HaircareRoutine() {
       <PageMeta
         title="Haircare Routine | Tranquil Organics"
         description="Build a natural haircare routine with Tranquil Roots Conditioning Bar, Ayurvedic Hair Oil, and Organic Hair Growth Butter."
+        canonical={absoluteUrl("/routine")}
       />
 
       <section className="page-hero">

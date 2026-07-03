@@ -11,20 +11,28 @@ export const products = [
     rating: 4.9,
     reviewCount: 42,
     image: "/images/organic-hair-growth-butter.png",
-    shortDescription: "A rich hair butter for moisture, softness, shine, and protective styles.",
+    shortDescription: "Seals in moisture, softens strands, and adds natural-looking shine.",
+    trustNote: "Natural-inspired care for dry hair and protective styles.",
+    benefitStatement:
+      "Plant-powered care that helps reduce dryness, soften strands, and support a consistent haircare routine.",
     description:
-      "A rich nourishing hair butter designed to moisturise, soften, and support healthy-looking hair growth.",
-    concerns: ["Dry Hair", "Breakage", "Protective Styles", "Dull Hair"],
+      "A rich hair butter made for moisture sealing, softer-feeling strands, protective styles, and natural-looking shine.",
+    concerns: ["Dry Hair", "Breakage Support", "Protective Styles", "Dull Hair"],
+    whoItIsFor:
+      "Suitable for natural hair routines, dry hair, dull hair, and protective styles that need moisture sealing.",
+    whatItDoes:
+      "Helps seal in moisture, soften strands, add shine, and support a steady haircare routine.",
     benefits: [
       "Helps seal in moisture",
-      "Supports soft and manageable hair",
+      "Softens strands",
       "Ideal for dry hair and protective styles",
-      "Adds shine",
+      "Adds natural-looking shine",
     ],
-    ingredients:
-      "Ingredients placeholder: add your exact butter blend, oils, botanical extracts, fragrance notes, and allergen details here before launch.",
+    keyIngredients:
+      "Ingredient details to be updated after brand confirmation.",
+    ingredients: "Full ingredient list to be updated after confirmation from the brand.",
     howToUse:
-      "Apply a small amount to damp or dry hair. Massage into hair strands and scalp as needed. Use after applying hair oil for better moisture sealing.",
+      "Apply a small amount to damp or dry hair to seal in moisture. Use after Ayurvedic Hair Oil or as needed around protective styles.",
   },
   {
     id: "ayurvedic-hair-oil",
@@ -38,20 +46,28 @@ export const products = [
     rating: 4.8,
     reviewCount: 36,
     image: "/images/ayurvedic-hair-oil.png",
-    shortDescription: "A lightweight scalp oil infused with castor and Ayurvedic-inspired care.",
+    shortDescription: "Nourishes the scalp and supports a consistent weekly routine.",
+    trustNote: "WhatsApp support available for routine guidance.",
+    benefitStatement:
+      "Plant-powered scalp care that nourishes the scalp, helps reduce dryness, and adds natural-looking shine.",
     description:
-      "A natural hair oil infused with castor oil and Ayurvedic-inspired ingredients to nourish the scalp and support stronger-looking hair.",
-    concerns: ["Itchy Scalp", "Scalp Nourishment", "Protective Styles", "Dull Hair"],
+      "A lightweight hair oil designed for scalp nourishment, dryness support, shine, and consistent natural haircare routines.",
+    concerns: ["Scalp Dryness", "Protective Styles", "Dull Hair"],
+    whoItIsFor:
+      "Suitable for customers building a scalp-care routine, refreshing protective styles, or managing scalp dryness.",
+    whatItDoes:
+      "Nourishes the scalp, helps reduce dryness, supports a consistent haircare routine, and adds natural-looking shine.",
     benefits: [
       "Nourishes the scalp",
       "Helps reduce dryness",
-      "Supports healthy-looking hair growth",
-      "Adds shine",
+      "Supports a consistent haircare routine",
+      "Adds natural-looking shine",
     ],
-    ingredients:
-      "Ingredients placeholder: add castor oil details, Ayurvedic-inspired botanicals, carrier oils, fragrance notes, and allergen details here before launch.",
+    keyIngredients:
+      "Ingredient details to be updated after brand confirmation.",
+    ingredients: "Full ingredient list to be updated after confirmation from the brand.",
     howToUse:
-      "Apply a few drops directly to the scalp and massage gently. Use 2 to 3 times per week or as part of a haircare routine.",
+      "Apply directly to the scalp and massage for 3 to 5 minutes. Use 2 to 3 times per week or as part of your regular routine.",
   },
   {
     id: "conditioning-bar",
@@ -65,18 +81,26 @@ export const products = [
     rating: 4.7,
     reviewCount: 29,
     image: "/images/conditioning-bar.png",
-    shortDescription: "A travel-friendly conditioning bar for softer, smoother wash days.",
+    shortDescription: "Softens strands and makes wash day feel easier.",
+    trustNote: "Premium packaging and easy wash-day storage.",
+    benefitStatement:
+      "A conditioning treatment that supports wash day softness, easier detangling, and a smoother-feeling routine.",
     description:
-      "A conditioning bar made to nourish hair with every wash, leaving hair soft, smooth, and easier to manage.",
-    concerns: ["Dry Hair", "Wash Day Care", "Wash Day Softness", "Dull Hair"],
+      "A conditioning bar made for wash day softness, smoother-feeling strands, and easier natural haircare maintenance.",
+    concerns: ["Dry Hair", "Wash Day Softness", "Dull Hair"],
+    whoItIsFor:
+      "Suitable for wash day routines, dry hair, dull hair, and customers who want a simple conditioning step.",
+    whatItDoes:
+      "Helps soften strands, support easier wash days, and leave hair feeling smoother.",
     benefits: [
       "Conditions hair after washing",
-      "Helps soften hair",
-      "Easy to use",
+      "Softens strands",
+      "Supports wash day softness",
       "Travel-friendly",
     ],
-    ingredients:
-      "Ingredients placeholder: add your conditioning base, natural oils, botanical ingredients, fragrance notes, and allergen details here before launch.",
+    keyIngredients:
+      "Ingredient details to be updated after brand confirmation.",
+    ingredients: "Full ingredient list to be updated after confirmation from the brand.",
     howToUse:
       "After washing, rub the conditioning bar between wet hands or directly onto wet hair. Leave briefly, then rinse thoroughly.",
   },
@@ -100,7 +124,10 @@ export const products = [
       "/images/organic-hair-growth-butter.png",
     ],
     shortDescription:
-      "A complete set for cleansing, nourishing, moisturising, and routine maintenance.",
+      "A full routine for scalp nourishment, wash day softness, and moisture sealing.",
+    trustNote: "Save when buying the routine as a complete set.",
+    benefitStatement:
+      "A complete routine pack for cleansing, nourishing, moisturising, and maintaining healthier-looking hair.",
     description:
       "A complete routine pack for cleansing, nourishing, moisturising, and maintaining healthier-looking hair.",
     includes: [
@@ -110,23 +137,25 @@ export const products = [
     ],
     concerns: [
       "Dry Hair",
-      "Itchy Scalp",
-      "Breakage",
+      "Scalp Dryness",
+      "Breakage Support",
       "Protective Styles",
       "Dull Hair",
-      "Wash Day Care",
-      "Scalp Nourishment",
       "Wash Day Softness",
-      "Breakage Support",
     ],
+    whoItIsFor:
+      "Suitable for customers who want all core Tranquil Roots routine steps in one set.",
+    whatItDoes:
+      "Combines wash day conditioning, scalp nourishment, and moisture sealing for a complete natural haircare routine.",
     benefits: [
       "Covers a full wash day to styling routine",
       "Combines cleansing, scalp care, and moisture sealing",
       "Helps simplify product selection",
       "Better value than buying each step separately",
     ],
-    ingredients:
-      "Bundle ingredient details use the individual product ingredient placeholders until final ingredient lists are confirmed by the brand.",
+    keyIngredients:
+      "Ingredient details to be updated after brand confirmation.",
+    ingredients: "Full ingredient list to be updated after confirmation from the brand.",
     howToUse:
       "Use the Conditioning Bar on wash day, massage Ayurvedic Hair Oil into the scalp, then apply Organic Hair Growth Butter to seal in moisture.",
   },

@@ -9,6 +9,7 @@ import {
 } from "../components/InfoPanels.jsx";
 import PageMeta from "../components/PageMeta.jsx";
 import { businessInfo, createWhatsAppLink } from "../data/business.js";
+import { absoluteUrl, organizationJsonLd } from "../data/seo.js";
 import { faqItems } from "../data/siteContent.js";
 
 export default function Contact() {
@@ -24,6 +25,8 @@ export default function Contact() {
       <PageMeta
         title="Contact and FAQ | Tranquil Organics"
         description="Contact Tranquil Organics by form, WhatsApp, Instagram, or email, and read FAQs about natural haircare orders, delivery, payments, and returns."
+        canonical={absoluteUrl("/contact")}
+        jsonLd={[organizationJsonLd()]}
       />
 
       <section className="page-hero compact">
@@ -97,6 +100,13 @@ export default function Contact() {
       </section>
 
       <BulkOrderSection />
+
+      <section className="section-shell policy-link-strip">
+        <a href="/shipping">Shipping Policy</a>
+        <a href="/returns">Returns Policy</a>
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/terms">Terms of Service</a>
+      </section>
 
       <section id="faq" className="section-shell section-pad faq-section">
         <div className="section-heading centered">

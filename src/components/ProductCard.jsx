@@ -60,6 +60,7 @@ export default function ProductCard({ product }) {
           <p>{product.shortDescription}</p>
         </div>
         <Rating value={product.rating} count={product.reviewCount} />
+        {product.trustNote && <p className="product-trust-note">{product.trustNote}</p>}
         <div className="product-card-actions">
           <div className="price-stack">
             {product.originalPrice && <span>{formatPrice(product.originalPrice)}</span>}

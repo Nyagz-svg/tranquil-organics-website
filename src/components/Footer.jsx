@@ -23,8 +23,10 @@ const learnLinks = [
 const careLinks = [
   { label: "Contact", to: "/contact" },
   { label: "FAQ", to: "/contact#faq" },
-  { label: "Delivery Information", to: "/contact#delivery" },
-  { label: "Returns Policy", to: "/contact#returns" },
+  { label: "Shipping Policy", to: "/shipping" },
+  { label: "Returns Policy", to: "/returns" },
+  { label: "Privacy Policy", to: "/privacy" },
+  { label: "Terms of Service", to: "/terms" },
   { label: "WhatsApp Support", to: businessInfo.whatsappUrl, external: true },
 ];
 

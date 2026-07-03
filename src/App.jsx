@@ -16,13 +16,22 @@ import Cart from "./pages/Cart.jsx";
 import Checkout from "./pages/Checkout.jsx";
 import IngredientGlossary from "./pages/IngredientGlossary.jsx";
 import HaircareTips from "./pages/HaircareTips.jsx";
+import PolicyPage from "./pages/PolicyPage.jsx";
 
 function ScrollToTop() {
-  const { pathname } = useLocation();
+  const { hash, pathname } = useLocation();
 
   useEffect(() => {
+    if (hash) {
+      const target = document.querySelector(hash);
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+        return;
+      }
+    }
+
     window.scrollTo({ top: 0, behavior: "smooth" });
-  }, [pathname]);
+  }, [hash, pathname]);
 
   return null;
 }
@@ -46,6 +55,10 @@ function SiteRoutes() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
+          <Route path="/shipping" element={<PolicyPage type="shipping" />} />
+          <Route path="/returns" element={<PolicyPage type="returns" />} />
+          <Route path="/privacy" element={<PolicyPage type="privacy" />} />
+          <Route path="/terms" element={<PolicyPage type="terms" />} />
         </Routes>
       </main>
       <Footer />

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Leaf, ShieldCheck, Sparkles } from "lucide-react";
 import PageMeta from "../components/PageMeta.jsx";
+import { absoluteUrl, organizationJsonLd } from "../data/seo.js";
 
 export default function About() {
   return (
@@ -8,6 +9,8 @@ export default function About() {
       <PageMeta
         title="About Tranquil Organics | Natural Beauty and Haircare"
         description="Learn the Tranquil Organics brand story and the Tranquil Roots product line for natural hair nourishment, wellness, and everyday self-care."
+        canonical={absoluteUrl("/about")}
+        jsonLd={[organizationJsonLd()]}
       />
 
       <section className="page-hero">
